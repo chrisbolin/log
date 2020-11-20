@@ -6,6 +6,8 @@ name: Build and deploy
 on:
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   build:
@@ -24,7 +26,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: rm -rf .next/ && npm run build
+      - run: npm run build
+      - run: npm run export
+      - run: mv out/ docs/
       - name: GitHub Commit & Push
         uses: actions-js/push@v1.2
         with:
