@@ -28,7 +28,7 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run export
-      - run: mv out/ docs/
+      - run: npm run prod
       - name: GitHub Commit & Push
         uses: actions-js/push@v1.2
         with:
