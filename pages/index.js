@@ -5,17 +5,19 @@ import { makeEntries } from "../server/entires";
 
 export default function Index({ entries }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Log - Chris Bolin</title>
       </Head>
-      {entries.map(({ html, date }, idx) => (
-        <div key={idx}>
-          <div>{format(new Date(date), "MMMM d, yyyy")}</div>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-      ))}
-    </div>
+      <main>
+        {entries.map(({ html, date }, idx) => (
+          <div className="entry" key={idx}>
+            <div className="date">{format(new Date(date), "MMMM d, yyyy")}</div>
+            <div className="text" dangerouslySetInnerHTML={{ __html: html }} />
+          </div>
+        ))}
+      </main>
+    </>
   );
 }
 
