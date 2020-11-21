@@ -13,7 +13,10 @@ export default function Index({ entries }) {
         {entries.map(({ html, date }, idx) => (
           <div className="entry" key={idx}>
             <div className="date">{format(new Date(date), "MMMM d, yyyy")}</div>
-            <div className="text" dangerouslySetInnerHTML={{ __html: html }} />
+            <div className="text">
+              <div dangerouslySetInnerHTML={{ __html: html }} />
+              <hr />
+            </div>
           </div>
         ))}
       </main>
