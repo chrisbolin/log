@@ -33,5 +33,5 @@ jobs:
         uses: actions-js/push@v1.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
-          message: automated next build for PR #${{ github.event.number }}
+          branch: ${{ github.ref }}
+          message: automated next build
