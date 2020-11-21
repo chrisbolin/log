@@ -28,8 +28,6 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run export
-        env:
-          BASE_PATH: /log
       - name: GitHub Commit & Push
         uses: actions-js/push@v1.2
         with:

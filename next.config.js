@@ -1,3 +1,3 @@
 module.exports = {
-  assetPrefix: process.env.BASE_PATH || "",
+  basePath: "/log",
 };
