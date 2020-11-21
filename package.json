@@ -10,8 +10,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
-    "prod": "rm -rf docs/ && mv out/ docs/"
+    "export": "rm -rf docs/ && next export -o docs/"
   },
   "dependencies": {
     "date-fns": "^2.16.1",
