@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
             src: url("/log/SourceCodePro-Light.ttf");
           }`}
         </style>
+        <link rel="icon" href="/log/favicon.ico"></link>
       </Head>
       <Component {...pageProps} />
     </>
