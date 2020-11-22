@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
         <style>
           {`@font-face {
             font-family: "Source Code Pro Light";
-            src: url("log/SourceCodePro-Light.ttf");
+            src: url("/log/SourceCodePro-Light.ttf");
           }`}
         </style>
       </Head>
