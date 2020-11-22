@@ -12,7 +12,9 @@ export default function Index({ entries }) {
       <main>
         {entries.map(({ html, date }, idx) => (
           <div className="entry" key={idx}>
-            <div className="date">{format(new Date(date), "MMMM d, yyyy")}</div>
+            <div className="date">
+              {format(new Date(date), "MMM dd yyyy").toUpperCase()}
+            </div>
             <div className="text">
               <div dangerouslySetInnerHTML={{ __html: html }} />
               <hr />
