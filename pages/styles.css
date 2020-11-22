@@ -17,6 +17,7 @@
   --dot-background-position: 0 0,
     calc(var(--dot-size) / 2) calc(var(--dot-size) / 2);
   --dot-background-size: var(--dot-size) var(--dot-size);
+  --hr-margin: auto;
 }
 
 @media (max-width: 800px) {
@@ -24,6 +25,7 @@
     --date-width: 7em;
     --date-left-offset: -2em;
     --date-text-align: center;
+    --hr-margin: 3em auto;
   }
 }
 
@@ -67,6 +69,7 @@ hr {
   background-size: var(--dot-background-size);
   width: 2em;
   height: 1em;
+  margin: var(--hr-margin);
 }
 
 ::selection {
@@ -75,4 +78,13 @@ hr {
 
 a {
   color: inherit;
+}
+
+a:hover,
+a:active {
+  color: inherit;
+  background-image: var(--dot-background-image);
+  background-position: var(--dot-background-position);
+  background-size: var(--dot-background-size);
+  text-decoration: none;
 }
