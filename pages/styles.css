@@ -3,7 +3,10 @@
   --date-text-align: right;
   --date-left-offset: -4em;
   --color-white: hsl(240, 30%, 97%);
-  --color-accent: hsl(240deg 19% 60%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-accent-a: hsl(40deg 41% 54%);
+  --dither-size: 5px;
+  --dither-portion: 23%;
 }
 
 @media (max-width: 800px) {
@@ -45,17 +48,25 @@ main {
   line-height: 1em;
   width: var(--date-width);
   text-align: var(--date-text-align);
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  background-image: radial-gradient(
+      var(--color-black) var(--dither-portion),
+      transparent var(--dither-portion)
+    ),
+    radial-gradient(
+      var(--color-black) var(--dither-portion),
+      transparent var(--dither-portion)
+    );
+  background-position: 0 0,
+    calc(var(--dither-size) / 2) calc(var(--dither-size) / 2);
+  background-size: var(--dither-size) var(--dither-size);
+  color: var(--color-black);
   padding: 6px;
 }
 
 hr {
   border: none;
   text-align: center;
-}
-hr::after {
-  content: "░";
+  background-color: ;
 }
 
 ::selection {
