@@ -4,9 +4,19 @@
   --date-left-offset: -4em;
   --color-white: hsl(240, 30%, 97%);
   --color-black: hsl(0, 0%, 0%);
-  --color-accent-a: hsl(40deg 41% 54%);
-  --dither-size: 5px;
-  --dither-portion: 23%;
+  --dot-size: 3px;
+  --dot-portion: 23%;
+  --dot-background-image: radial-gradient(
+      var(--color-black) var(--dot-portion),
+      transparent var(--dot-portion)
+    ),
+    radial-gradient(
+      var(--color-black) var(--dot-portion),
+      transparent var(--dot-portion)
+    );
+  --dot-background-position: 0 0,
+    calc(var(--dot-size) / 2) calc(var(--dot-size) / 2);
+  --dot-background-size: var(--dot-size) var(--dot-size);
 }
 
 @media (max-width: 800px) {
@@ -40,6 +50,9 @@ main {
 }
 
 .date {
+  background-image: var(--dot-background-image);
+  background-position: var(--dot-background-position);
+  background-size: var(--dot-background-size);
   position: absolute;
   transform-origin: top left;
   transform: rotate(270deg);
@@ -48,29 +61,21 @@ main {
   line-height: 1em;
   width: var(--date-width);
   text-align: var(--date-text-align);
-  background-image: radial-gradient(
-      var(--color-black) var(--dither-portion),
-      transparent var(--dither-portion)
-    ),
-    radial-gradient(
-      var(--color-black) var(--dither-portion),
-      transparent var(--dither-portion)
-    );
-  background-position: 0 0,
-    calc(var(--dither-size) / 2) calc(var(--dither-size) / 2);
-  background-size: var(--dither-size) var(--dither-size);
   color: var(--color-black);
   padding: 6px;
 }
 
 hr {
   border: none;
-  text-align: center;
-  background-color: ;
+  background-image: var(--dot-background-image);
+  background-position: var(--dot-background-position);
+  background-size: var(--dot-background-size);
+  width: 2em;
+  height: 1em;
 }
 
 ::selection {
-  background-color: yellow;
+  background-color: #ffff008a;
 }
 
 a {
