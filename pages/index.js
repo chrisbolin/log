@@ -8,6 +8,12 @@ export default function Index({ entries }) {
     <>
       <Head>
         <title>Log - Chris Bolin</title>
+        <style>
+          {`@font-face {
+            font-family: "Source Code Pro Light";
+            src: url("log/SourceCodePro-Light.ttf");
+          }`}
+        </style>
       </Head>
       <main>
         {entries.map(({ html, date }, idx) => (
