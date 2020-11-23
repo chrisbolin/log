@@ -31,7 +31,7 @@
 
 body {
   font-size: 1.5em;
-  font-family: "Source Code Pro Light", monospace;
+  font-family: "Source Code Pro Regular", monospace;
   margin: 0;
   background-color: var(--color-white);
 }
