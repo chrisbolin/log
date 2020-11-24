@@ -20,7 +20,8 @@
   --hr-margin: -0.5em 0.5em 3em auto;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  /* media breakpoint and main max-width are related, css vars can't be used in media */
   :root {
     --date-width: 7em;
     --date-left-offset: -2em;
@@ -38,6 +39,7 @@ body {
 
 main {
   max-width: 750px;
+  /* media breakpoint and main max-width are related */
   margin: 4em auto;
   padding-left: 2em;
 }
