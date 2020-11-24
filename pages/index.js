@@ -5,11 +5,13 @@ import { makeEntries } from "../server/entires";
 export default function Index({ entries }) {
   return (
     <main>
-      {entries.map(({ html, date }, idx) => (
-        <div className="entry" key={idx}>
-          <div className="date">
-            {format(new Date(date), "MMM dd yyyy").toUpperCase()}
-          </div>
+      {entries.map(({ html, timestamp, slug }) => (
+        <div className="entry" key={slug} id={slug}>
+          <a href={"#" + slug}>
+            <div className="date">
+              {format(new Date(timestamp), "MMM dd yyyy").toUpperCase()}
+            </div>
+          </a>
           <div className="text">
             <div dangerouslySetInnerHTML={{ __html: html }} />
             <hr />
