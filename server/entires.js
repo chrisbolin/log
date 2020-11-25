@@ -19,7 +19,7 @@ async function mapArrayAsync(array, callback) {
 async function processFile(filename, directory) {
   const filepath = path.join(directory, filename);
   const raw = await fs.readFile(filepath, { encoding: "utf-8" });
-  const allHtml = marked(raw);
+  const allHtml = marked(raw.trim());
   const timestamp = getDate(filename);
 
   return allHtml.split("<hr>").map((html, index) => ({

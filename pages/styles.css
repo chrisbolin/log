@@ -1,23 +1,39 @@
 :root {
+  --color-white: hsl(240, 30%, 97%);
+  --color-black: black;
+  --color-red: hsl(0deg 100% 63%);
+  --color-blue: hsl(263deg 100% 79%);
+  --color-highlighter: hsl(60deg 100% 50% / 54%);
+
   --date-width: 3em;
   --date-text-align: right;
   --date-left-offset: -4em;
-  --color-white: hsl(240, 30%, 97%);
-  --color-black: hsl(0, 0%, 0%);
+
+  --entry-bottom-margin: 4em;
+
   --dot-size: 3px;
   --dot-portion: 23%;
-  --dot-background-image: radial-gradient(
-      var(--color-black) var(--dot-portion),
-      transparent var(--dot-portion)
-    ),
-    radial-gradient(
-      var(--color-black) var(--dot-portion),
-      transparent var(--dot-portion)
-    );
+  --dot-black-radial-gradient: radial-gradient(
+    var(--color-black) var(--dot-portion),
+    transparent var(--dot-portion)
+  );
+  --dot-red-radial-gradient: radial-gradient(
+    var(--color-red) var(--dot-portion),
+    transparent var(--dot-portion)
+  );
+  --dot-blue-radial-gradient: radial-gradient(
+    var(--color-blue) var(--dot-portion),
+    transparent var(--dot-portion)
+  );
+  --dot-black-background-image: var(--dot-black-radial-gradient),
+    var(--dot-black-radial-gradient);
+  --dot-red-background-image: var(--dot-red-radial-gradient),
+    var(--dot-red-radial-gradient);
+  --dot-blue-background-image: var(--dot-blue-radial-gradient),
+    var(--dot-blue-radial-gradient);
   --dot-background-position: 0 0,
     calc(var(--dot-size) / 2) calc(var(--dot-size) / 2);
   --dot-background-size: var(--dot-size) var(--dot-size);
-  --hr-margin: -0.5em 0.5em 3em auto;
 }
 
 @media (max-width: 900px) {
@@ -26,7 +42,7 @@
     --date-width: 7em;
     --date-left-offset: -2em;
     --date-text-align: center;
-    --hr-margin: 0 0 5em auto;
+    --entry-bottom-margin: 7em;
   }
 }
 
@@ -46,13 +62,26 @@ main {
 
 .entry {
   position: relative;
+  margin-bottom: var(--entry-bottom-margin);
+}
+
+.entry-text > p:last-child::after,
+.entry-text > :not(p):last-child > *:last-child::after {
+  content: " ";
+  white-space: pre-wrap;
+  display: inline-block;
+  width: 1em;
+  background-image: var(--dot-black-background-image);
+  background-position: var(--dot-background-position);
+  background-size: var(--dot-background-size);
 }
 
 .date {
-  background-image: var(--dot-background-image);
+  background-image: var(--dot-black-background-image);
   background-position: var(--dot-background-position);
   background-size: var(--dot-background-size);
   position: absolute;
+  display: block;
   transform-origin: top left;
   transform: rotate(270deg);
   top: calc(var(--date-width) + 16px);
@@ -62,20 +91,13 @@ main {
   text-align: var(--date-text-align);
   color: var(--color-black);
   padding: 6px;
+  text-decoration: none;
 }
 
-hr {
-  border: none;
-  background-image: var(--dot-background-image);
-  background-position: var(--dot-background-position);
-  background-size: var(--dot-background-size);
-  width: 1em;
-  height: 1em;
-  margin: var(--hr-margin);
-}
-
-::selection {
-  background-color: #ffff008a;
+.date:hover,
+.date:active {
+  color: inherit;
+  background-image: var(--dot-blue-background-image);
 }
 
 a {
@@ -85,8 +107,12 @@ a {
 a:hover,
 a:active {
   color: inherit;
-  background-image: var(--dot-background-image);
+  background-image: var(--dot-red-background-image);
   background-position: var(--dot-background-position);
   background-size: var(--dot-background-size);
   text-decoration: none;
+}
+
+::selection {
+  background-color: var(--color-highlighter);
 }
