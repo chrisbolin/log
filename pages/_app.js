@@ -6,6 +6,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
+        <title>Log - Chris Bolin</title>
+        <link rel="icon" href="/log/favicon.ico"></link>
         <style>
           {/* unfortunately this has to be here for fucking multiple NextJS reasons
             and I don't even want to get into it right now */}
