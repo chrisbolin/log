@@ -1,4 +1,6 @@
 :root {
+  --body-font-size: 1.5em;
+
   --color-white: hsl(240, 30%, 97%);
   --color-black: black;
   --color-red: hsl(0deg 100% 63%);
@@ -10,7 +12,8 @@
   --date-text-align: right;
   --date-left-offset: -4em;
 
-  --entry-bottom-margin: 4em;
+  --entry-margin-bottom: 4em;
+  --entry-margin-right: 0;
 
   --dot-size: 3px;
   --dot-portion: 23%;
@@ -46,15 +49,17 @@
 @media (max-width: 900px) {
   /* media breakpoint and main max-width are related, css vars can't be used in media */
   :root {
+    --body-font-size: 1.2em;
     --date-width: 7em;
     --date-left-offset: -2em;
     --date-text-align: center;
-    --entry-bottom-margin: 7em;
+    --entry-margin-bottom: 7em;
+    --entry-margin-right: 1.5em;
   }
 }
 
 body {
-  font-size: 1.5em;
+  font-size: var(--body-font-size);
   font-family: "Source Code Pro Regular", monospace;
   margin: 0;
   background-color: var(--color-white);
@@ -69,7 +74,8 @@ main {
 
 .entry {
   position: relative;
-  margin-bottom: var(--entry-bottom-margin);
+  margin-bottom: var(--entry-margin-bottom);
+  margin-right: var(--entry-margin-right);
   hyphens: auto;
 }
 
