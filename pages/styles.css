@@ -3,6 +3,7 @@
   --color-black: black;
   --color-red: hsl(0deg 100% 63%);
   --color-blue: hsl(263deg 100% 79%);
+  --color-light-grey: hsl(0deg 0% 0% / 20%);
   --color-highlighter: hsl(60deg 100% 50% / 54%);
 
   --date-width: 3em;
@@ -25,12 +26,18 @@
     var(--color-blue) var(--dot-portion),
     transparent var(--dot-portion)
   );
+  --dot-light-grey-radial-gradient: radial-gradient(
+    var(--color-light-grey) var(--dot-portion),
+    transparent var(--dot-portion)
+  );
   --dot-black-background-image: var(--dot-black-radial-gradient),
     var(--dot-black-radial-gradient);
   --dot-red-background-image: var(--dot-red-radial-gradient),
     var(--dot-red-radial-gradient);
   --dot-blue-background-image: var(--dot-blue-radial-gradient),
     var(--dot-blue-radial-gradient);
+  --dot-light-grey-background-image: var(--dot-light-grey-radial-gradient),
+    var(--dot-light-grey-radial-gradient);
   --dot-background-position: 0 0,
     calc(var(--dot-size) / 2) calc(var(--dot-size) / 2);
   --dot-background-size: var(--dot-size) var(--dot-size);
@@ -112,6 +119,19 @@ a:active {
   background-position: var(--dot-background-position);
   background-size: var(--dot-background-size);
   text-decoration: none;
+}
+
+blockquote {
+  margin: 0;
+  padding-left: 1em;
+  background-image: var(--dot-light-grey-background-image);
+  background-position: var(--dot-background-position);
+  background-size: var(--dot-background-size);
+}
+
+blockquote > * {
+  background: var(--color-white);
+  padding-left: 0.4em;
 }
 
 ::selection {
