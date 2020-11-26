@@ -60,7 +60,7 @@
 
 body {
   font-size: var(--body-font-size);
-  font-family: "Source Code Pro Regular", monospace;
+  font-family: "Open Sans Regular", sans-serif;
   margin: 0;
   background-color: var(--color-white);
 }
@@ -85,6 +85,7 @@ main {
   white-space: pre-wrap;
   display: inline-block;
   width: 1em;
+  margin-left: 0.1em;
   background-image: var(--dot-black-background-image);
   background-position: var(--dot-background-position);
   background-size: var(--dot-background-size);
