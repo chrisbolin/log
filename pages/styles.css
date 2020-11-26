@@ -63,6 +63,7 @@ main {
 .entry {
   position: relative;
   margin-bottom: var(--entry-bottom-margin);
+  hyphens: auto;
 }
 
 .entry-text > p:last-child::after,
