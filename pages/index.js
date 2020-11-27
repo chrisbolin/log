@@ -18,11 +18,18 @@ function Entry({ html, timestamp, slug }) {
 
 export default function Index({ entries }) {
   return (
-    <main>
-      {entries.map((entry) => (
-        <Entry key={entry.slug} {...entry} />
-      ))}
-    </main>
+    <>
+      <header>
+        <div>
+          <a href="/">chris.bolin.co</a> / log
+        </div>
+      </header>
+      <main>
+        {entries.map((entry) => (
+          <Entry key={entry.slug} {...entry} />
+        ))}
+      </main>
+    </>
   );
 }
 
