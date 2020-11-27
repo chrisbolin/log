@@ -8,7 +8,7 @@
   --color-light-grey: hsl(0deg 0% 0% / 20%);
   --color-highlighter: hsl(60deg 100% 50% / 54%);
 
-  --header-text-padding-left: 3em;
+  --header-text-padding-left: 2.3em;
 
   --date-width: 3em;
   --date-text-align: right;
@@ -57,7 +57,7 @@
     --date-text-align: center;
     --entry-margin-bottom: 7em;
     --entry-margin-right: 1.5em;
-    --header-text-padding-left: 2.5em;
+    --header-text-padding-left: 1.95em;
   }
 }
 
@@ -75,10 +75,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  font-size: 0.8em;
   color: var(--color-black);
-  border-top: 1px solid var(--color-black);
-  border-bottom: 1px solid var(--color-black);
   background-color: var(--color-white);
   background-image: var(--dot-light-grey-background-image);
   background-position: var(--dot-background-position);
@@ -88,7 +85,7 @@ header {
 header > div {
   max-width: 750px;
   margin: 0 auto;
-  padding: 0.4em;
+  padding: 0.3em;
   padding-left: var(--header-text-padding-left);
 }
 
