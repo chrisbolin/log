@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs").promises;
 const marked = require("marked");
+const smartquotes = require("smartquotes");
 const format = require("date-fns/format");
 
 function getDate(filename) {
@@ -19,7 +20,7 @@ async function mapArrayAsync(array, callback) {
 async function processFile(filename, directory) {
   const filepath = path.join(directory, filename);
   const raw = await fs.readFile(filepath, { encoding: "utf-8" });
-  const allHtml = marked(raw.trim());
+  const allHtml = marked(smartquotes(raw).trim());
   const timestamp = getDate(filename);
 
   return allHtml.split("<hr>").map((html, index) => ({
